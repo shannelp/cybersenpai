@@ -1,0 +1,474 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    color: black;
+    min-height: 100%;
+}
+
+header {
+    background: linear-gradient(to right, rgb(0, 180, 186), rgb(161, 21, 154));
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.title {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.title h1 {
+    font-size: 40px;
+    margin: 0;
+    color: black;
+}
+
+.title a {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    margin-right: 20px; 
+}
+
+.user-info {
+    margin-right: 20px;
+    text-align: right;
+}
+
+.create-btn,
+.end-sprint-btn {
+    background-color: rgb(0, 180, 186);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    max-width: 200px; 
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.create-btn:hover {
+    background-color: rgb(1, 139, 144);   
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    min-width: 200px; 
+    background-color: #112b47;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: calc(100vh - 60px);
+    align-items: center;
+    box-sizing: border-box;
+    overflow: auto;
+    height: auto; /* Let the sidebar grow with the content */
+    min-height: 100vh; /* Ensures it stretches to full height initially */
+}
+
+.sidebar button {
+    background-color: rgb(239, 28, 228);
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 180px;
+    font-size: 15px;
+    color: white;
+}
+
+.sidebar button:hover {
+    background-color: rgb(190, 25, 182); 
+    border-color: rgb(235, 139, 230); 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    height: auto; /* Let the content grow naturally */
+    min-height: 100vh; /* Ensure the content stretches to at least the viewport height */
+}
+
+.project-controls {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.project-controls .dropdown {
+    margin-bottom: 10px;
+}
+
+.project-controls select {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+}
+
+.project-controls .controls-row {
+    display: flex;
+    gap: 45px;
+}
+
+.project-controls button, 
+.project-controls label {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid rgb(0, 180, 186);
+    background-color: rgb(0, 180, 186);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.project-controls label {
+    padding-left: 0;
+}
+
+.search-container {
+    position: relative; /* Position for absolute dropdown */
+    margin-left: 10px; /* Space between dropdowns and search bar */
+}
+
+#task-search {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 300px; /* Adjust width as necessary */
+    background-color: rgb(0, 180, 186); /* Set background color */
+    color: black; /* Change text color for better contrast */
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%; /* Position below the search input */
+    left: 0;
+    right: 0; /* Match width with the input field */
+    background-color: rgb(0, 180, 186); /* Set background color to match the buttons */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000; /* Make sure it appears above other elements */
+    display: none; /* Initially hidden */
+}
+
+.search-dropdown div {
+    padding: 10px; /* Spacing for dropdown items */
+    cursor: pointer; /* Pointer on hover */
+    color: black; /* Change text color for better contrast */
+}
+
+.search-dropdown div:hover {
+    background-color: white; /* Highlight on hover */
+}
+
+/* .product-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* Task List and Item Styling */
+.task-item {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+    background-color: #b8daf9; /* Lighten the background on hover */
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.task-item h3 {
+    font-size: 20px;
+    margin: 0;
+    color: #000000;
+}
+
+.task-priority {
+    position: absolute;
+    top: -10px; 
+    left: 10px;
+    background-color: rgb(44, 80, 124); 
+    color: white; 
+    padding: 1px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.triangle-story-point {
+    width: 0;
+    height: 0;
+    border-right: 60px solid rgb(44, 80, 124);
+    border-bottom: 60px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.triangle-story-point::after {
+    content: attr(data-point);
+    position: absolute;
+    top: 5px;  /* Adjust this value to move the text vertically */
+    right: -45px;  /* Adjust this value to move the text horizontally */
+    font-size: 16px;
+    font-weight: bold;
+    color: white;  /* Set the text color to black */
+    text-align: center;
+}
+
+.task-tags {
+    position: absolute; /* Position it absolutely within the task item */
+    right: 30px; /* Adjust to move the tags closer or further from the edge */
+    bottom: -10px; /* Adjust to move the tags closer or further from the top */
+    display: flex;
+    flex-direction: row; /* Stack tags horizontally */
+    gap: 5px; /* Space between tags */
+}
+
+.task-tag {
+    background-color: rgb(44, 80, 124);
+    color: #fff; 
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid rgb(29, 51, 79); 
+    white-space: nowrap;
+    margin: 2px 0;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+.priority-low {
+    background-color: rgb(122, 254, 122);
+    color: black;  
+}
+
+.priority-medium {
+    background-color: rgb(234, 249, 100);
+    color: black; 
+}
+
+.priority-high {
+    background-color: rgb(255, 173, 114);
+    color: black; 
+}
+
+.priority-urgent {
+    background-color: rgb(255, 82, 82);
+    color: black; 
+}
+
+/* Task Details Styling */
+.task-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(110, 180, 245);
+    border-radius: 5px;
+    display: none;
+}
+
+/* Task Form Styling */
+#task-form input,
+#task-form textarea,
+#task-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#task-form button {
+    background-color: #6a18cf;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Styling for edit button */
+.edit-btn {
+    position: absolute;
+    bottom: 280px;
+    right: 50px;
+    background-color: rgb(0, 180, 186); 
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: rgb(1, 139, 144); 
+}
+
+/* Styling for delete button */
+.delete-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    background-color: rgb(247, 43, 98); 
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: rgb(207, 36, 82); 
+}
+
+/* Style for the dropdowns */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(0, 180, 186);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 150px;
+}
+
+.dropdown-content button {
+    background-color: rgb(0, 180, 186);
+    color: black;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+.tags-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px; /* Optional: Adds space above the tags section */
+}
+
+.tags-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Optional: Adds space between tags */
+}
+
+.tags-section input[type="checkbox"] {
+    margin-right: 5px; /* Optional: Adds space between checkbox and label text */
+}
+
+.show {
+    display: block;
+}
+
+.task-arrow {
+    position: absolute;  /* Position it relative to the task-item */
+    right: 40px;  /* Adjust the horizontal position */
+    top: 50%;  /* Adjust the vertical position */
+    transform: translateY(-50%);  /* Center it vertically */
+    width: 24px;  /* Adjust the size */
+    height: 24px;
+    border-radius: 50%;  /* Make it circular */
+    background-color: #4a5568;  /* Background color for the circle */
+    color: #f7fafc;  /* Text (arrow) color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;  /* Arrow size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-arrow:hover {
+    background-color: #38404e;  /* Slightly darker color on hover */
+}
+
+button.change-wallpaper-btn {
+    background-color: rgb(0, 180, 186);
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 50px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 180px;
+    font-size: 15px;
+    color: white
+}
+
+button.change-wallpaper-btn:hover{
+    background-color: rgb(1, 139, 144);  
+    border-color: rgb(1, 139, 144); 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}

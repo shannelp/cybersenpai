@@ -1,0 +1,133 @@
+/* General body and background styling */
+body, html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    min-width: 100%;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(to right, rgb(0, 180, 186), rgb(161, 21, 154));
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+}
+
+.title h1 {
+    font-size: 40px;
+    color: black;
+    margin: 0;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    margin-right: 20px; 
+}
+
+/* Main container for sidebar and content */
+.main-container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Sidebar styling */
+.sidebar {
+    min-width: 200px; 
+    background-color: #112b47;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: calc(100vh - 60px);
+    align-items: center;
+    box-sizing: border-box;
+    overflow: auto;
+    height: auto; /* Let the sidebar grow with the content */
+    min-height: 100vh; /* Ensures it stretches to full height initially */
+}
+
+.sidebar button {
+    background-color: rgb(239, 28, 228);
+    border: 1px solid rgb(235, 139, 230)1ca;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 180px;
+    font-size: 15px;
+    color: white;
+}
+
+.sidebar button:hover {
+    background-color: rgb(190, 25, 182); 
+    border-color: rgb(235, 139, 230); 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Ensure the history log takes more width and centers it */
+.history-log {
+    background-color: rgba(170, 245, 245, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%; 
+    text-align: center; 
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Add a border below the header inside the history log */
+.history-log h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid gray; /* Add border */
+    padding-bottom: 10px;
+}
+
+/* Adjust the content container */
+.content {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align at the top */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Adjust the main container to make sure it supports flex layout */
+.main-container {
+    display: flex;
+    height: calc(100vh - 60px); /* Full height minus header */
+}
+
+#total-time-spent {
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left; /* Align text to the left */
+}
+
+#log-list {
+    margin-top: 20px;
+    padding-left: 20px; /* Add padding for better spacing from the left */
+    text-align: left;
+}
+
+#log-list p {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.6; /* Improve readability */
+}

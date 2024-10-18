@@ -1,0 +1,180 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    min-height: 100%;
+}
+
+header {
+    background: linear-gradient(to right, rgb(0, 180, 186), rgb(161, 21, 154));
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.title {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.title h1 {
+    font-size: 40px;
+    margin: 0;
+    color: black;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    margin-right: 20px; 
+}
+
+.user-info {
+    margin-right: 20px;
+    text-align: right;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    min-width: 200px; 
+    background-color: #112b47;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: calc(100vh - 60px);
+    align-items: center;
+    box-sizing: border-box;
+    overflow: auto;
+    height: auto; /* Let the sidebar grow with the content */
+    min-height: 100vh; /* Ensures it stretches to full height initially */
+}
+
+.sidebar button {
+    background-color: rgb(239, 28, 228);
+    border: 1px solid rgb(235, 139, 230)1ca;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 180px;
+    font-size: 15px;
+    color: white;
+}
+
+.sidebar button:hover {
+    background-color: rgb(190, 25, 182); 
+    border-color: rgb(235, 139, 230); 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Container around the table */
+.table-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    min-height: calc(100vh - 60px); /* Ensure table takes full page height */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    background-color: rgba(170, 245, 245, 0.9);
+    border-radius: 8px;
+    border-spacing: 0; /* Remove default spacing */
+    table-layout: fixed; /* Fixed layout for equal column widths */
+    min-height: calc(100vh - 60px); /* Table height to fill the page */
+    border-collapse: collapse; /* Ensures the borders collapse together */
+}
+
+/* Header and table cell styling */
+.table th, .table td {
+    border: 2px solid #112b47; /* Add border for both table headers and cells */
+    padding: 1em;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top; /* Ensure tasks start from the top of the column */
+    width: 33.33%; /* Fixed width for 3 columns */
+}
+
+/* Header row styling */
+.header {
+    background-color: rgb(0, 180, 186);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Task card styling */
+.table .task-item {
+    border-radius: 8px; /* Increase border-radius for smoother edges */
+    padding: 15px; /* Add more padding for larger task cards */
+    margin-bottom: 15px; /* Increase space between task cards */
+    cursor: grab;
+    width: 90%; /* Increase width for a bigger appearance */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Keep text aligned to the left */
+    font-weight: bold; /* Make the text bold */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
+    outline: 2px solid #ddd; /* Add outline to make it look like a card */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+}
+
+.table .task-item:hover {
+    transform: translateY(-5px); /* Lift the card slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Styling for dragging effect */
+.task-item.dragging {
+    opacity: 0.6;
+}
+
+/* Priority level colors for tasks */
+.priority-low {
+    background-color: rgb(122, 254, 122);
+    color: black;  
+}
+
+.priority-medium {
+    background-color: rgb(234, 249, 100);
+    color: black; 
+}
+
+.priority-high {
+    background-color: rgb(255, 173, 114);
+    color: black; 
+}
+
+.priority-urgent {
+    background-color: rgb(255, 82, 82);
+    color: black; 
+}
+
+
