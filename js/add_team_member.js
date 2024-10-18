@@ -42,7 +42,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
         // Update the user info section in the HTML to display the user's email
         document.getElementById('user-info').innerHTML = `
-            <p>${user.email}<br><small>Team Member</small></p>
+            <p>${user.email}<br><small>Admin</small></p>
         `;
 
     } else {
