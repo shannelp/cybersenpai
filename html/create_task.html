@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <link rel="stylesheet" href="../css/create_task.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Create a New Task</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+            <button class="create-btn" onclick="window.location.href='../html/create_task.html'">Create New Task</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content"> <!-- Parent container for sidebar and form -->
+            <div class="sidebar">
+                <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+                <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+                <button onclick="window.location.href='../html/login_team_board.html'">Team Board</button>
+            </div>
+            <div class="content">
+                <div class="task-form-container">
+                    <form id="task-form">
+                        <h1>Create New Task</h1>
+                        
+                        <label for="task-title">1. Enter the title of the task:</label>
+                        <input type="text" id="task-title" placeholder="Type here..." required>
+
+                        <label for="task-tags">2. Add suitable tags to the task:</label>
+                        <div id="custom-select-container" class="custom-select">
+                            <div id="selected-tags" class="selected-tags"></div>
+                            <div class="dropdown">
+                                <div id="dropdown-list" class="dropdown-list">
+                                    <label><input type="checkbox" value="Front-end"> Front-end</label>
+                                    <label><input type="checkbox" value="Back-end"> Back-end</label>
+                                    <label><input type="checkbox" value="Database"> Database</label>
+                                    <label><input type="checkbox" value="API"> API</label>
+                                    <label><input type="checkbox" value="UI/UX"> UI/UX</label>
+                                    <label><input type="checkbox" value="Testing"> Testing</label>
+                                    <label><input type="checkbox" value="Framework"> Framework</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label for="task-points">3. Task Type: Story Point</label>
+                        <input type="range" id="task-points" min="1" max="10" value="5">
+                        <span id="story-point-output">5</span>
+
+                        <label for="project-stage">4. Project Stage:</label>
+                        <select id="project-stage">
+                            <option value="Integration">Integration</option>
+                            <option value="Development">Development</option>
+                            <option value="Testing">Testing</option>
+                        </select>
+
+                        <label for="task-status">5. Task Status:</label>
+                        <select id="task-status">
+                            <option value="In-progress">In-progress</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Not-started">Not-started</option>
+                        </select>
+
+                        <label for="task-priority">6. Priority of Task:</label>
+                        <select id="task-priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Important">Important</option>
+                            <option value="Urgent">Urgent</option>
+                        </select>
+
+                        <label for="task-assignee">7. Select Assignee:</label>
+                        <select id="task-assignee">
+                            <option value="Julian">Julian</option>
+                            <option value="John">John</option>
+                            <option value="Jane">Jane</option>
+                        </select>
+
+                        <label for="task-type">8. Type of Story:</label>
+                        <select id="task-type">
+                            <option value="Feature">Feature</option>
+                            <option value="Bug">Bug</option>
+                            <option value="Task">Task</option>
+                        </select>
+
+                        <label for="task-desc">9. Description of Task:</label>
+                        <textarea id="task-desc" placeholder="Type here..."></textarea>
+
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Your custom scripts -->
+    <script src="../js/create_task.js"></script>
+</body>
+</html>

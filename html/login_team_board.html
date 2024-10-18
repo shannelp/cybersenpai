@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="../css/login_team_board.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Login to Team Board</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+            <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+            <button onclick="window.location.href='../html/login_team_board.html'">Team Board</button>
+        </div>
+        <div class="content">
+            <!-- Admin Login Form -->
+            <div class="admin-login-container">
+                <form id="admin-login">
+                    <h1>Log in as an Admin</h1>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <p id="error-message" style="color: red; display: none;">Incorrect password!</p>
+                    <button class="sign-in-btn" type="submit">Sign In</button>
+                    <a href="../html/admin_password_reset.html" class="forgot-password">Forgot your password?</a>
+                </form>
+            </div>
+
+            <!-- New Team Member Login Form -->
+            <div class="member-login-container">
+                <form id="member-login">
+                    <h1>Log in as a Team Member</h1>
+                    <button class="log-in-btn" type="button" onclick="window.location.href='../html/team_board_member.html'">Log In to Team Board</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="../js/login_team_board.js"></script>
+</body>
+</html>

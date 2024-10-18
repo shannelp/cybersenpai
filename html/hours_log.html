@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hours Log</title>
+    <link rel="stylesheet" href="../css/hours_log.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Hours Log</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container"> <!-- Parent container for sidebar and form -->
+            <div class="sidebar">
+                <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+                <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+                <button onclick="window.location.href='../html/login_team_board.html'">Team Board</button>
+            </div>
+
+            <div class="content">
+                <div class="hours-log" id="hours-log">
+                    <h2>Hours Log</h2>
+                    <div id="log-list">
+                        <!-- List of logged hours will be displayed here dynamically -->
+                    </div>
+
+                    <button class="add-log-btn" onclick="showLogInput()">Add Log</button>
+
+                    <!-- Hidden log input form -->
+                    <div id="log-input">
+                        <label for="log-name"></label>
+                        <select id="log-name" required>
+                            <!-- Placeholder-like option -->
+                            <option value="" disabled selected>Select Assignee</option>
+                            <!-- Dynamically populated options for team members will appear here -->
+                        </select>
+                        <input type="date" id="log-date" />
+                        <input type="number" id="log-hours" placeholder="Enter hours" min="0" max="23" />
+                        <input type="number" id="log-minutes" placeholder="Enter minutes" min="0" max="59" />
+                        <textarea id="log-description" placeholder="Describe the changes"></textarea>
+                        <button onclick="addLog()">Submit Log</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="../js/hours_log.js"></script> <!-- Link to your JS file -->
+</body>
+</html>

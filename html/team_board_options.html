@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Board</title>
+    <link rel="stylesheet" href="../css/team_board_options.css"> 
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Admin Action</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+            <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+            <button onclick="window.location.href='../html/login_team_board.html'">Team Board</button>
+        </div>
+
+        <!-- Button content instead of task details -->
+        <div class="content">
+            <div class="buttons-container">
+                <button onclick="window.location.href='../html/admin_password_reset.html'"class="main-btn">Change Admin Password</button>
+                <button onclick="window.location.href='../html/password_change.html'"class="main-btn">Change Member Password</button>
+                <button onclick="window.location.href='../html/team_board_admin.html'"class ="main-btn">Enter Team Board</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <script src="../js/team_board_options.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="../css/team_board_admin.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Team Board for Admin</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+            <div class="dropdown">
+                <button class="manage-team-btn" id="manageTeamBtn">Manage Team Members</button>
+                <div class="dropdown-content" id="team-dropdown">
+                    <button onclick="window.location.href='../html/add_team_member.html'">Add Team Member</button>
+                    <button onclick="window.location.href='../html/remove_team_member.html'">Remove Team Member</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+            <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+            <button onclick="window.location.href='../html/team_board_admin.html'">Team Board</button>
+        </div>
+        <div class="content">
+            
+            <!-- Date Selector -->
+            <div>
+                <label for="start-date">Select Dates:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">to</label>
+                <input type="date" id="end-date">
+                <button onclick="setDate()">Submit</button> <!-- Button doesn't do anything yet -->
+            </div>
+
+            <!-- Dynamic Content Area -->
+            <div id="dynamic-content">
+                <h2>Team Members and their working hours</h2>
+
+            <div class="members-list" id="membersList">
+                <!-- Dynamically populated team members list will appear here -->
+            </div>
+            </div>
+        </div>
+    </main>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="../js/team_board_admin.js"></script> <!-- Link to your JS file -->
+</body>
+</html>

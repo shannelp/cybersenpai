@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Team Member</title>
+    <link rel="stylesheet" href="../css/remove_team_member.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Remove Existing Team Member</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+            <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+            <button onclick="window.location.href='../html/team_board_admin.html'">Team Board</button>
+        </div>
+
+        <!-- Form content for removing a team member -->
+        <div class="content">
+            <div class="form-container">
+                <!-- Dropdown to select a team member -->
+                <label for="team-member-select">Select Team Member:</label>
+                <select id="team-member-select">
+                    <!-- Options dynamically populated by JS or backend -->
+                    <option value="" disabled selected>Select a team member</option>
+                    <!-- <option value="member1">John Doe</option>     this is hard coding, handle this in js -->
+                    <!-- <option value="member2">Jane Smith</option>    -->
+                </select>
+
+                <!-- Dropdown for assigned tasks, hidden initially -->
+                <div class="dropdown-container" id="task-dropdown" style="display: none;">
+                    <label for="assigned-tasks">Currently Assigned Tasks:</label>
+                    <select id="assigned-tasks">
+                        <!-- Task options to be dynamically populated by JS -->
+                    </select>
+                </div>
+
+                <!-- Warning message when a member is assigned to tasks -->
+                <div class="warning-message" id="warning-message" style="display: none;">
+                    <p>Warning: This member is currently assigned to tasks. Please reassign tasks before removal or proceed with caution.</p>
+                </div>
+
+                <div class="save-container">
+                    <button class="save-btn">Save <span class="arrow">&#10132;</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- Your custom scripts -->
+    <script src="../js/remove_team_member.js"></script>
+</body>
+</html>

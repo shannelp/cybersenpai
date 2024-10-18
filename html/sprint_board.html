@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="../css/sprint_board.css"> <!-- Link to external CSS file -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Kanban Board</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+            <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+            <button onclick="window.location.href='../html/login_team_board.html'">Team Board</button>
+        </div>
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr class="header">
+                        <th>Not-started</th>
+                        <th>In-progress</th>
+                        <th>Completed</th>
+                    </tr>
+                </thead>
+                <tbody id="task-table-body">
+                    <tr>
+                        <td class="dropzone" ondrop="drop(event, 'Not-started')" ondragover="allowDrop(event)"></td>
+                        <td class="dropzone" ondrop="drop(event, 'In-progress')" ondragover="allowDrop(event)"></td>
+                        <td class="dropzone" ondrop="drop(event, 'Completed')" ondragover="allowDrop(event)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="../js/firebase_sprint_board.js"></script>
+    </main>

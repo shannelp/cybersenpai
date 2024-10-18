@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url(../images/anime-girl-short-hairs-crossing-street-on-rainy-day-pa-1920x1200.jpg) no-repeat center center fixed;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: rgba(170, 245, 245, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .login-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            display: block;
+            margin: 10px auto;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00b7ff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .login-container a {
+            display: block;
+            margin-top: 10px;
+            color: #5a697a;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .google-signin {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .google-signin .google-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #67b8fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .google-signin img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .google-signin span {
+            font-size: 16px;
+            color: white;
+        }
+        #error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Project Management</h1>
+        <form id="loginForm">
+            <input type="text" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <p id="error-message" style="color: red; display: none;">Incorrect password!</p> <!-- Error message -->
+            <button type="submit">Sign in</button>
+        </form>
+        <a href="#">Forgot your password?</a>
+        <div class="google-signin">
+            <div class="google-button" id="googleSignInBtn">
+                <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google">
+                <span>Sign in with Google</span>
+            </div>
+            <div id="snackbar"></div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Your custom scripts -->
+    <script src="../js/firebase.js"></script> <!-- Make sure this is moved to the bottom -->
+</body>
+</html>

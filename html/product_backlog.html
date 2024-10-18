@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="../css/product_backlog.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Product Backlog</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+            <button class="create-btn" onclick="window.location.href='../html/create_task.html'">Create New Task</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+            <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+            <button onclick="window.location.href='../html/login_team_board.html'">Team Board</button>
+            <div class="dropdown">
+                <button class="change-wallpaper-btn" id="manageTeamBtn">Change Wallpaper</button>
+                <div class="dropdown-content" id="team-dropdown">
+                    <button>City</button>
+                    <button>Nature</button>
+                    <button>Futuristic</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="project-controls">
+                <!-- Controls row wrapper to align items side-by-side -->
+                <div class="controls-row">
+                    <div class="dropdown">
+                        <button class="sort-by-btn">SORT BY <span>&#8645;</span></button>
+                        <div class="dropdown-content" id="sort-dropdown">
+                            <button onclick="sortTasks('priority')">Priority</button>
+                            <button onclick="sortTasks('date')">Date Created</button>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="filter-btn">FILTER <span>&#128269;</span></button>
+                        <div class="dropdown-content" id="filter-dropdown">
+                            <button onclick="filterTasks('all')">All</button>
+                            <button onclick="filterTasks('In-progress')">In-progress</button>
+                            <button onclick="filterTasks('Not-started')">Not-started</button>
+                            <button onclick="filterTasks('Completed')">Completed</button>
+                            <div class="tags-section">
+                                <label>
+                                    <input type="checkbox" class="checkbox" value="Front-end" onchange="checkSelectedTags()">Front-End
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="checkbox" value="Back-end" onchange="checkSelectedTags()">Back-End
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="checkbox" value="API" onchange="checkSelectedTags()">API
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="checkbox" value="Framework" onchange="checkSelectedTags()">Framework
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="checkbox" value="Database" onchange="checkSelectedTags()">Database
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="checkbox" value="UI/UX" onchange="checkSelectedTags()">UI/UX
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="checkbox" value="Testing" onchange="checkSelectedTags()">Testing
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" id="task-search" placeholder="Search tasks..." oninput="filterTaskNames()">
+                        <div class="search-dropdown" id="search-dropdown"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-list" id="task-list">
+                <!-- Dynamically populated task list will appear here -->
+            </div>
+        </div>
+    </main>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Your custom scripts -->
+    <script src="../js/firebasePB.js"></script>   
+     
+</body>
+</html>

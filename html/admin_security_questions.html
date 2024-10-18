@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Security Questions</title>
+    <link rel="stylesheet" href="../css/admin_security_questions.css"> <!-- Corrected CSS reference -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/cyberSenpai_Logo.jpg" alt="Company Logo">
+        </div>
+        <div class="title">
+            <h1>Security Questions Setup</h1>
+        </div>
+        <div class="user-profile">
+            <div class="user-info" id="user-info">
+                <p><br><small></small></p>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <button onclick="window.location.href='../html/product_backlog.html'">Product Backlog</button>
+            <button onclick="window.location.href='../html/sprint_backlog.html'">Sprint Backlog</button>
+            <button onclick="window.location.href='../html/team_board_admin.html'">Team Board</button>
+        </div>
+
+        <div class="content">
+            <div class="security-questions-container">
+                <form id="security-questions-form">
+                    <h1>Answer Security Questions</h1>
+                    
+                    <!-- Question 1 -->
+                    <label for="question1">1. Choose a security question:</label>
+                    <select id="question1">
+                        <!-- Options will be populated via JavaScript -->
+                    </select>
+                    <!-- This textarea will display the full selected question -->
+                    <textarea id="display-question1" class="display-question" readonly></textarea>
+                    <input type="text" id="answer1" placeholder="Type your answer here..." required>
+
+                    <!-- Question 2 -->
+                    <label for="question2">2. Choose a security question:</label>
+                    <select id="question2">
+                        <!-- Options will be populated via JavaScript -->
+                    </select>
+                    <!-- This textarea will display the full selected question -->
+                    <textarea id="display-question2" class="display-question" readonly></textarea>
+                    <input type="text" id="answer2" placeholder="Type your answer here..." required>
+
+                    <!-- Question 3 -->
+                    <label for="question3">3. Choose a security question:</label>
+                    <select id="question3">
+                        <!-- Options will be populated via JavaScript -->
+                    </select>
+                    <!-- This textarea will display the full selected question -->
+                    <textarea id="display-question3" class="display-question" readonly></textarea>
+                    <input type="text" id="answer3" placeholder="Type your answer here..." required>
+                    
+                    <!-- Submit Button -->
+                    <button id="submit-btn" class="submit-btn">Submit Answers</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Include the external JavaScript file -->
+    <script src="../js/admin_security_questions.js"></script> <!-- New JS reference -->
+</body>
+</html>
